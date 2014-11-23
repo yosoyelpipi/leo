@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.leocondoriapp.app"
+    version   = "1.0.0">
+
+<name>Leo Condori</name>
+
+<description>
+App de Leo Condori para conocer todo lo que sucede en el laboratorio de bytes.
+</description>
+<preference name="phonegap-version" value="3.6.3" />
+<preference name="orientation" value="portrait" />
+<preference name="fullscreen" value="true" />
+<icon src="img/icon_gde.png" />
+<gap:splash src="img/splash.png" />
+<preference name="splash-screen-duration" value="5000" />
+<preference name="exit-on-suspend" value="true" />
+<preference name="android-minSdkVersion" value="5" />
+<preference name="android-targetSdkVersion" value="19" />
+<preference name="android-maxSdkVersion" value="19" />
+<preference name="permissions" value="none" />
+
+<author href="http://www.leocondori.com.ar" email="contacto@leocondori.com.ar">
+Leonardo Condori
+</author>
+
+</widget>
