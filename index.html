@@ -21,17 +21,11 @@
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	
 	<script type="text/javascript" charset="utf-8">
-
-    // Wait for device API libraries to load
-    //
     document.addEventListener("deviceready", onDeviceReady, false);
 
-    // device APIs are available
-    //
     function onDeviceReady() {
         checkConnection();
     }
-
         function checkConnection() {
             var networkState = navigator.connection.type;
 
@@ -47,7 +41,6 @@
 
             alert('Connection type: ' + states[networkState]);
         }
-
     </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
