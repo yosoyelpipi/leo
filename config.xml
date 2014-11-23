@@ -39,7 +39,7 @@ App de Leo Condori para conocer todo lo que sucede en el laboratorio de bytes.
 <plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
 <plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/> 
 
-<preference name="permissions" value="none" />
+
 
 <author href="http://www.leocondori.com.ar" email="contacto@leocondori.com.ar">
 Leonardo Condori
