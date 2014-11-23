@@ -23,8 +23,21 @@ App de Leo Condori para conocer todo lo que sucede en el laboratorio de bytes.
 <preference name="android-minSdkVersion" value="5" />
 <preference name="android-targetSdkVersion" value="19" />
 <preference name="android-maxSdkVersion" value="19" />
-<preference name="android.permission.INTERNET" />
-<preference name="android.permission.ACCESS_NETWORK_STATE" />
+
+<gap:config-file platform="android" parent="/manifest">
+    <uses-permission name="android.permission.ACCESS_NETWORK_STATE" />
+</gap:config-file>
+
+<gap:config-file platform="android" parent="/manifest">
+    <uses-permission name="android.permission.INTERNET" />
+</gap:config-file>  
+
+<gap:config-file platform="android" parent="/manifest">
+    <uses-permission name="android.permission.READ_PHONE_STATE" />
+</gap:config-file>
+
+<plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
+<plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/> 
 
 <preference name="permissions" value="none" />
 
