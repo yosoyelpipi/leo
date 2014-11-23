@@ -9,6 +9,10 @@
 <description>
 App de Leo Condori para conocer todo lo que sucede en el laboratorio de bytes.
 </description>
+<feature name="NetworkStatus">
+    <param name="android-package" value="org.apache.cordova.NetworkManager" />
+</feature>
+
 <preference name="phonegap-version" value="3.6.3" />
 <preference name="orientation" value="portrait" />
 <preference name="fullscreen" value="true" />
@@ -19,13 +23,9 @@ App de Leo Condori para conocer todo lo que sucede en el laboratorio de bytes.
 <preference name="android-minSdkVersion" value="5" />
 <preference name="android-targetSdkVersion" value="19" />
 <preference name="android-maxSdkVersion" value="19" />
+<preference name="android.permission.INTERNET" />
+<preference name="android.permission.ACCESS_NETWORK_STATE" />
 
-
-<feature name="NetworkStatus">
-    <param name="android-package" value="org.apache.cordova.NetworkManager" />
-</feature>
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <preference name="permissions" value="none" />
 
 <author href="http://www.leocondori.com.ar" email="contacto@leocondori.com.ar">
