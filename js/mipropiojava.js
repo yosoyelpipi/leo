@@ -7,14 +7,16 @@ function onBodyLoad(){
 function onDeviceReady(){
 	$("#resultado").html("Phonegap está en funcionamiento.");
 
-	navigator.accelerometer.getCurrentAcceleration(onInfo, onError);
+	//navigator.accelerometer.getCurrentAcceleration(onInfo, onError);
+
+	var watch = navigator.accelerometer.watchAcceleration (onInfo, onError {frecuency: 2000});
 }
 
 function onInfo(aceleracion){
-$("#resultado").append( 'Acceleration X: ' + aceleracion.x + '\n' +
-          				'Acceleration Y: ' + aceleracion.y + '\n' +
-          				'Acceleration Z: ' + aceleracion.z + '\n' +
-          				'Timestamp: '      + aceleracion.timestamp + '\n');
+$("#resultado").append( 'Acceleration X: ' + aceleracion.x + '<br>' +
+          				'Acceleration Y: ' + aceleracion.y + '<br>' +
+          				'Acceleration Z: ' + aceleracion.z + '<br>' +
+          				'Timestamp: '      + aceleracion.timestamp);
 }
 
 function onError(){
