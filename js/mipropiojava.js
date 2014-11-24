@@ -9,7 +9,7 @@ function onDeviceReady(){
 
 	//navigator.accelerometer.getCurrentAcceleration(onInfo, onError);
 
-	var watch = navigator.accelerometer.watchAcceleration (onInfo, onError {frecuency: 2000});
+	var watch = navigator.accelerometer.watchAcceleration (onInfo, onError, {frecuency: 2000});
 }
 
 function onInfo(aceleracion){
