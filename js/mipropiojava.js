@@ -13,7 +13,7 @@ function onDeviceReady(){
 }
 
 function onInfo(aceleracion){
-$("#resultado").append( 'Acceleration X: ' + aceleracion.x + '<br>' +
+$("#resultado").html( 'Acceleration X: ' + aceleracion.x + '<br>' +
           				'Acceleration Y: ' + aceleracion.y + '<br>' +
           				'Acceleration Z: ' + aceleracion.z + '<br>' +
           				'Timestamp: '      + aceleracion.timestamp);
