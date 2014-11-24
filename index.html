@@ -30,7 +30,7 @@
   </style>
   </head>
 
-  <body>
+  <body onload="onBodyLoad()">
 
     <div class="site-wrapper">
 
@@ -69,6 +69,10 @@
             </form>
           </div>
 
+		  <div id="resultado">
+			<p>Probando Java</p>
+          </div>
+		  
           <div id="loading" class="loading">
           <p>Cargando...</p>
           </div>
@@ -117,7 +121,8 @@
     </script>
 
 	
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/mipropiojava.js"></script>
 	
 	<script type="text/javascript" charset="utf-8">
     document.addEventListener("deviceready", onDeviceReady, false);
