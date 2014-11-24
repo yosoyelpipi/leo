@@ -9,11 +9,14 @@
 <description>
 App de Leo Condori para conocer todo lo que sucede en el laboratorio de bytes.
 </description>
-<feature name="NetworkStatus">
-    <param name="android-package" value="org.apache.cordova.NetworkManager" />
-</feature>
+
 
 <preference name="phonegap-version" value="3.6.3" />
+
+<gap:plugin name="org.apache.cordova.device" version="0.2.12" />
+<gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
+
+
 <preference name="orientation" value="portrait" />
 <preference name="fullscreen" value="true" />
 <icon src="img/icon_gde.png" />
@@ -23,23 +26,6 @@ App de Leo Condori para conocer todo lo que sucede en el laboratorio de bytes.
 <preference name="android-minSdkVersion" value="5" />
 <preference name="android-targetSdkVersion" value="19" />
 <preference name="android-maxSdkVersion" value="19" />
-
-<gap:config-file platform="android" parent="/manifest">
-    <uses-permission name="android.permission.ACCESS_NETWORK_STATE" />
-</gap:config-file>
-
-<gap:config-file platform="android" parent="/manifest">
-    <uses-permission name="android.permission.INTERNET" />
-</gap:config-file>  
-
-<gap:config-file platform="android" parent="/manifest">
-    <uses-permission name="android.permission.READ_PHONE_STATE" />
-</gap:config-file>
-
-<plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
-<plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/> 
-
-
 
 <author href="http://www.leocondori.com.ar" email="contacto@leocondori.com.ar">
 Leonardo Condori
