@@ -13,8 +13,17 @@ function onDeviceReady(){
     window.addEventListener("batterylow", onBatteryLow, false);
     window.addEventListener("batterystatus", onBatteryStatus, false);
     document.addEventListener("backbutton", onBackKeyDown, false);
+    document.addEventListener("menubutton", onMenuKeyDown, false);
 
 }
+
+
+// Handle the menu button
+//
+function onMenuKeyDown() {
+	alert('Menu button pressed.');    
+
+    }
 
 
 function onBackKeyDown() {
