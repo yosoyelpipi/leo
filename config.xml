@@ -17,6 +17,7 @@ App de Leo Condori para conocer todo lo que sucede en el laboratorio de bytes.
 <gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
 <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
 <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
+<gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
 
 
 <preference name="orientation" value="portrait" />
