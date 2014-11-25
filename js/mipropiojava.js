@@ -26,7 +26,7 @@ function onDeviceReady(){
     //
     function onBatteryStatus(info) {
 
-    	if(info.isPlugged == "true"){
+    	if(info.isPlugged == true){
     		var enchufado = "si";
     	}else{
     		var enchufado = "no";
