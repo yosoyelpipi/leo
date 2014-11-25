@@ -10,7 +10,7 @@ function onDeviceReady(){
 	//navigator.accelerometer.getCurrentAcceleration(onInfo, onError);
     checkConnection();
 	var watch = navigator.accelerometer.watchAcceleration (onInfo, onError, {frecuency: 2000});
-    playAudio("audio/linea.mp3");
+    playAudio("http://leocondori.com.ar/app/audio/linea.mp3");
 
 }
 
