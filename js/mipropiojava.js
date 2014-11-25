@@ -25,7 +25,14 @@ function onDeviceReady(){
     // Handle the batterystatus event
     //
     function onBatteryStatus(info) {
-        alert("Level: " + info.level + " isPlugged: " + info.isPlugged);
+
+    	if(info.isPlugged == "true"){
+    		var enchufado = "si";
+    	}else{
+    		var enchufado = "no";
+    	}
+
+        alert("Nivel de carga: " + info.level + "% y además el dispositivo está enchufado: " + enchufado);
     }
 
 /*
