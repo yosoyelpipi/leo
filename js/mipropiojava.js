@@ -10,6 +10,24 @@ function onDeviceReady(){
 	//navigator.accelerometer.getCurrentAcceleration(onInfo, onError);
     checkConnection();
 	var watch = navigator.accelerometer.watchAcceleration (onInfo, onError, {frecuency: 2000});
+
+
+function audio(e){
+	
+	$("#b_playAudio").bind("tap", function(){
+		e.preventDefault();
+   		e.stopImmediatePropagation();
+		 $("#resultadoAudio").html("Pidiendo audio");
+ 			playAudio("http://leocondori.com.ar/app/audio/linea.mp3");
+	});
+	
+	$("#b_stopAudio").bind("tap", function(){
+		e.preventDefault();
+   		e.stopImmediatePropagation();
+ 			stopAudio();
+	});
+}
+	
 }
 
 /*
@@ -32,7 +50,7 @@ red
             states[Connection.CELL]     = 'Cell generic connection';
             states[Connection.NONE]     = 'No network connection';
 
-            alert('Connection type: ' + states[networkState]);
+            alert('Tu tipo de conexión es: ' + states[networkState]);
         }
 
 /*
@@ -59,21 +77,7 @@ audio
 *
 */
 
-function audio(e){
-	
-	$("#b_playAudio").bind("tap", function(){
-		e.preventDefault();
-   		e.stopImmediatePropagation();
-		 $("#resultadoAudio").html("Pidiendo audio");
- 			playAudio("http://leocondori.com.ar/app/audio/linea.mp3");
-	});
-	
-	$("#b_stopAudio").bind("tap", function(){
-		e.preventDefault();
-   		e.stopImmediatePropagation();
- 			stopAudio();
-	});
-}
+
 	var my_media = null;
     var mediaTimer = null;
 	
