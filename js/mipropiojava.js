@@ -32,7 +32,7 @@ function onDeviceReady(){
     		var enchufado = "no";
     	}
 
-        alert("Nivel de carga: " + info.level + "% y además el dispositivo está enchufado: " + enchufado);
+        alert("El nivel de carga es: " + info.level + "% y además el dispositivo " + enchufado + " está enchufado: ");
     }
 
 /*
