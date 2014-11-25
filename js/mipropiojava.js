@@ -12,9 +12,17 @@ function onDeviceReady(){
 	var watch = navigator.accelerometer.watchAcceleration (onInfo, onError, {frecuency: 2000});
     window.addEventListener("batterylow", onBatteryLow, false);
     window.addEventListener("batterystatus", onBatteryStatus, false);
+    document.addEventListener("backbutton", onBackKeyDown, false);
 
 }
 
+
+function onBackKeyDown() {
+            if( confirm("Realmente desea salir de la aplicación?") )
+            {
+                  navigator.app.exitApp();
+            }
+       } 
 
     // Handle the batterylow event
     //
