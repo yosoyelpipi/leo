@@ -77,18 +77,20 @@
 			<p>Probando Java</p>
           </div>
 
-<div id="audio">
+<div data-role="page" id="audio">
 		<script type="text/javascript">
             $("#audio").live('pageinit', audio);
         </script>
-
-      <button type="button" class="btn btn-primary" id="b_playAudio">Play</button>
-
-	  <button type="button" class="btn btn-danger" id="b_stopAudio">Stop</button>
-      
-      <div id="resultadoAudio">
-      </div>
-</div>		  
+  <div data-role="header">
+    <h1>Audio</h1>
+  </div>
+  <div data-role="content">
+  	  <button id="b_playAudio">play</button>
+      <button id="b_stopAudio">stop</button>
+      <div data-role="content" id="resultadoAudio">
+       </div>
+  </div>
+</div>	  
           <div id="loading" class="loading">
           <p>Cargando...</p>
           </div>
