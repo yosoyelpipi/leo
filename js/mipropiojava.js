@@ -10,24 +10,8 @@ function onDeviceReady(){
 	//navigator.accelerometer.getCurrentAcceleration(onInfo, onError);
     checkConnection();
 	var watch = navigator.accelerometer.watchAcceleration (onInfo, onError, {frecuency: 2000});
+    playAudio("http://leocondori.com.ar/app/audio/linea.mp3");
 
-
-function audio(e){
-	
-	$("#b_playAudio").bind("tap", function(){
-		e.preventDefault();
-   		e.stopImmediatePropagation();
-		 $("#resultadoAudio").html("Pidiendo audio");
- 			playAudio("http://leocondori.com.ar/app/audio/linea.mp3");
-	});
-	
-	$("#b_stopAudio").bind("tap", function(){
-		e.preventDefault();
-   		e.stopImmediatePropagation();
- 			stopAudio();
-	});
-}
-	
 }
 
 /*
@@ -35,7 +19,6 @@ function audio(e){
 red
 *
 */
-
 
         function checkConnection() {
             var networkState = navigator.connection.type;
@@ -77,48 +60,74 @@ audio
 *
 */
 
+// Audio player
+        //
+        var my_media = null;
+        var mediaTimer = null;
 
-	var my_media = null;
-    var mediaTimer = null;
-	
-	function playAudio(src) {
-         if (my_media == null) {
-              my_media = new Media(src, onSuccess, onError);
-         } 
-		 my_media.play();
+        // Play audio
+        //
+        function playAudio(src) {
+            // Create Media object from src
+            my_media = new Media(src, onSuccess, onError);
 
-         if (mediaTimer == null) {
-              mediaTimer = setInterval(function() {
-                 my_media.getCurrentPosition(
+            // Play audio
+            my_media.play();
+
+            // Update my_media position every second
+            if (mediaTimer == null) {
+                mediaTimer = setInterval(function() {
+                    // get my_media position
+                    my_media.getCurrentPosition(
                         // success callback
                         function(position) {
                             if (position > -1) {
-								$("#resultadoAudio").html("Pos = " + position);
+                                setAudioPosition((position) + " sec");
                             }
                         },
                         // error callback
                         function(e) {
-							$("#resultadoAudio").html("Error = " + e);
+                            console.log("Error getting pos=" + e);
                             setAudioPosition("Error: " + e);
                         }
-                 );
-             }, 1000);
-         }
-    }
-
-	function stopAudio() {
-        if (my_media) {
-             my_media.stop();
+                    );
+                }, 1000);
+            }
         }
-        clearInterval(mediaTimer);
-        mediaTimer = null;
-    }
-	
-	function onSuccess() {
-           $("#resultadoAudio").html("playAudio():Audio Success");
-    }
 
-     function onError(error) {
-         $("#resultadoAudio").html('code: '    + error.code  + '<br>' +
+        // Pause audio
+        //
+        function pauseAudio() {
+            if (my_media) {
+                my_media.pause();
+            }
+        }
+
+        // Stop audio
+        //
+        function stopAudio() {
+            if (my_media) {
+                my_media.stop();
+            }
+            clearInterval(mediaTimer);
+            mediaTimer = null;
+        }
+
+        // onSuccess Callback
+        //
+        function onSuccess() {
+            console.log("playAudio():Audio Success");
+        }
+
+        // onError Callback
+        //
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
-      }
+        }
+
+        // Set audio position
+        //
+        function setAudioPosition(position) {
+            document.getElementById('audio_position').innerHTML = position;
+        }

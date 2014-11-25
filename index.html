@@ -77,20 +77,13 @@
 			<p>Probando Java</p>
           </div>
 
-<div data-role="page" id="audio">
-		<script type="text/javascript">
-            $("#audio").live('pageinit', audio);
-        </script>
-  <div data-role="header">
-    <h1>Audio</h1>
-  </div>
-  <div data-role="content">
-  	  <button id="b_playAudio">play</button>
-      <button id="b_stopAudio">stop</button>
-      <div data-role="content" id="resultadoAudio">
-       </div>
-  </div>
-</div>	  
+        <a href="#" class="btn large" onclick="playAudio('http://leocondori.com.ar/app/audio/linea.mp3');">Play Audio</a>
+        <a href="#" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
+        <a href="#" class="btn large" onclick="stopAudio();">Stop Playing Audio</a>
+        <p id="audio_position"></p>
+
+
+
           <div id="loading" class="loading">
           <p>Cargando...</p>
           </div>
